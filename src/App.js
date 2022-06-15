@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import UserContext from "./context/user-context";
+import { useState } from "react";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import AllArticles from './components/AllArticles'
+import ArticlesByTopic from './components/ArticlesByTopic'
+import Home from './components/Home'
+import IndvidualArticle from './components/IndividualArticle'
+import Topics from './components/Topics'
+import Users from "./components/Users";
 
 function App() {
+  const [userContext, setUserContext] = useState({
+    username: 'Don\'t forget to sign in',
+    name: 'you still have not signed in',
+    avatar_url: 'come on sign in' 
+  });
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <UserContext.Provider value={{ userContext, setUserContext }}>
+          <Header />
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/topics" element={<Topics />} />
+            <Route path="/topics/:topic" element={<ArticlesByTopic />} />
+            <Route path="/articles" element={<AllArticles />} />
+            <Route path="/articles/:article_id" element={<IndvidualArticle />} />
+            <Route path="/users" element={<Users />} />
+          </Routes>
+        </UserContext.Provider>
+      </div>
+    </BrowserRouter>
   );
 }
 
