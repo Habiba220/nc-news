@@ -23,3 +23,10 @@ export const fetchArticlesByTopic = (topic) => {
   });
 };
 
+export const fetchUsers = () => {
+  return myApi.get('/users').then((res) => {
+    return res.data.users;
+  });
+};
+
+

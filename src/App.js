@@ -14,7 +14,7 @@ import UserProfile from "./components/UserProfile";
 
 function App() {
   const [userContext, setUserContext] = useState({
-    username: 'Don\'t forget to sign in',
+    username: 'Not signed in',
     name: 'you still have not signed in',
     avatar_url: 'come on sign in' 
   });
