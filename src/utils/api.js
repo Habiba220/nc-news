@@ -13,3 +13,9 @@ export const fetchAllArticles = () => {
   });
 };
 
+export const fetchTopics = () => {
+  return myApi.get(`/topics`).then((res) => {
+    return res.data.topics;
+  });
+};
+
