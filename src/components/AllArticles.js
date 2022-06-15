@@ -14,11 +14,15 @@ const AllArticles = () => {
       });
     }, []);
   
-    if(isLoading) { return <p>Loading...</p>}
+    if(isLoading) { 
+      return (<>
+      <div className="loader"></div> <p className="Loading">Loading...</p>
+      </>)
+    }
   
     return (
-      <>
-        <ul>
+      <div className="ArticleList">
+        <ul className="ArticleListContainer">
           {currentArticles.map((article) => {
             return (
               <>
@@ -27,7 +31,7 @@ const AllArticles = () => {
             );
           })}
         </ul>
-      </>
+      </div>
     );
 }
 

@@ -6,7 +6,7 @@ const Nav = () => {
   const { userContext } = useContext(UserContext);
 
   return (
-    <nav className="Nav">
+    <nav className="topnav">
       <span>{userContext.username}</span>
       <Link to="/">Home</Link>
       <Link to="/users">Users</Link>
