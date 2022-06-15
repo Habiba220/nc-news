@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const TopicCard = ({topic}) => {
     return (
@@ -6,7 +6,8 @@ const TopicCard = ({topic}) => {
           <li className="ArticleCardContent">
             <h2>{topic.slug}</h2>
             <p>{topic.description}</p>
-            <Button>Checkout the hotest takes</Button>
+            <Link to={`/topics/${topic.slug}`}>Checkout the hotest takes</Link>
+            {/* <Button>Checkout the hotest takes</Button> */}
           </li>
         </div>
       );
