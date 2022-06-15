@@ -12,7 +12,7 @@ const AllArticles = () => {
         setCurrentArticles(articles);
         setIsLoading(false)
       });
-    });
+    }, []);
   
     if(isLoading) { return <p>Loading...</p>}
   
