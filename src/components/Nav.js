@@ -7,7 +7,7 @@ const Nav = () => {
 
   return (
     <nav className="topnav">
-      <span>{userContext.username}</span>
+      <Link to={`/users/${userContext.username}`}>{userContext.username}</Link>
       <Link to="/">Home</Link>
       <Link to="/users">Users</Link>
       <Link to="/topics">Topics</Link>

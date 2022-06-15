@@ -12,7 +12,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+#slogan {
+  color: #0a0a0a;
+  border: #f2f2f2;
+  width: auto;
+  height: auto;
+}
 .Header {
   min-height: 30vh;
   display: flex;

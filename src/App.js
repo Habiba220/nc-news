@@ -10,6 +10,7 @@ import Home from './components/Home'
 import IndvidualArticle from './components/IndividualArticle'
 import Topics from './components/Topics'
 import Users from "./components/Users";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   const [userContext, setUserContext] = useState({
@@ -31,6 +32,7 @@ function App() {
             <Route path="/articles" element={<AllArticles />} />
             <Route path="/articles/:article_id" element={<IndvidualArticle />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/users/:username" element={<UserProfile />} />
           </Routes>
         </UserContext.Provider>
       </div>
