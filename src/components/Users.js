@@ -1,10 +1,6 @@
 import { fetchUsers } from "../utils/api";
 import UserContext from "../context/user-context";
 import { useEffect, useState, useContext } from "react";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
 import { Button } from "@mui/material";
 
 
