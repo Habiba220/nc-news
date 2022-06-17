@@ -53,4 +53,12 @@ export const patchComment = (comments_id, inc_votes) => {
   });
 };
 
+export const postComment = (article_id, body, username) => {
+  return myApi.post(`/articles/${article_id}/comments`, {body, username}).then((res) => {
+    return res.data.comment;
+  });
+};
+
+
+
 

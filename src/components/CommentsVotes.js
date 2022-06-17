@@ -16,7 +16,7 @@ return (
 <>
   <p class="vote-count">Votes: {votes + userCommentVote}</p>
   <button
-          disabled={userContext.username === 'Not signed in'}
+          disabled={userContext.username === 'Not signed in' || userCommentVote >= 1}
           onClick={handleClick}
           class="vote-btn" 
           data-default-text="Vote This Comment Up!"

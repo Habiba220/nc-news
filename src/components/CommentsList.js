@@ -2,6 +2,7 @@ import { fetchArticleComments } from "../utils/api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CommentCard from "./CommentCard";
+import PostComments from "./PostComment";
 
 const CommentsList = () => {
     const {article_id} = useParams();
@@ -28,6 +29,7 @@ const CommentsList = () => {
                 return <CommentCard key={comment.comment_id} comment={comment} />;
               })}
             </ul>
+            <PostComments setArticleComments={setArticleComments}/>
         </div>
         );
 }
