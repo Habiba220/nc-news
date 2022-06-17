@@ -36,7 +36,19 @@ export const fetchArticle = (article_id) => {
 };
 
 export const patchArticle = (article_id, inc_votes) => {
-  return myApi.get(`/articles/${article_id}`, {inc_votes}).then((res) => {
+  return myApi.patch(`/articles/${article_id}`, {inc_votes}).then((res) => {
+    return res.data;
+  });
+};
+
+export const fetchArticleComments = (article_id) => {
+  return myApi.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data.comments;
+  });
+};
+
+export const patchComment = (comments_id, inc_votes) => {
+  return myApi.patch(`/comments/${comments_id}`, {inc_votes}).then((res) => {
     return res.data;
   });
 };
