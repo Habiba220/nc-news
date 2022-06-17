@@ -5,12 +5,12 @@ import UserContext from '../context/user-context'
 const Votes = ({article_id, votes}) => {
     const {userContext} = useContext(UserContext)
     const [userVote, setUserVote] = useState(0);
-    console.log(votes) 
+
     const handleClick = () => {
         setUserVote((preVote) => preVote + 1);
         patchArticle(article_id, 1)
     }
-    console.log(userVote)
+    
     
 return (
 <>
