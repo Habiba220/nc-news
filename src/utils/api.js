@@ -35,4 +35,10 @@ export const fetchArticle = (article_id) => {
   });
 };
 
+export const patchArticle = (article_id, inc_votes) => {
+  return myApi.get(`/articles/${article_id}`, {inc_votes}).then((res) => {
+    return res.data;
+  });
+};
+
 
